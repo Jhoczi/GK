@@ -102,8 +102,6 @@
                 /*------------------------------------------------------------*/
                 /* TODO: Add support for more drawing tools. */
                 let brushType = parseInt(document.querySelector('#brushChoice').value);
-                //let xT = [];
-                //let yT = [];
                 let xyT = [];
                 let n = 10;
                 console.log(brushType);
@@ -137,28 +135,13 @@
                 {
                     for (let i = 0; i < n; i++)
                     {
-                        //xT[i] = parseInt(x * Math.cos(i * 2 * Math.PI / n));
-                        //yT[i] = parseInt(y * Math.cos(i * 2 * Math.PI / n));
+                        
                         xyT.push(x - 20* Math.cos(i * 2 * Math.PI / n),y - 20 * Math.sin(i * 2 * Math.PI / n));
                     }
-                    //graphics.beginPath();
-                    //graphics.fillPoly(xT[0],yT[0],xT[1],yT[1],xT[2],yT[2]);
-                    //graphics.strokePoly(xT[0],yT[0],xT[1],yT[1],xT[2],yT[2]);
+                    
                     console.log("XYT:",...xyT);
                     graphics.fillPoly(...xyT);
                     graphics.strokePoly(...xyT);
-
-                    /*let pts = [];
-                    for (let i = 0; i < 6; i++) {
-                        pts.push({
-                            x: x - 20 * Math.cos(i * 2 * Math.PI / 6),
-                            y: y - 20 * Math.sin(i * 2 * Math.PI / 6),
-                        });
-                    }
-
-                    graphics.fillPoly(...pts.flatMap(x => Object.values(x)));
-                    graphics.strokePoly(...pts.flatMap(x => Object.values(x)));*/
-
                     
                 }
                 
